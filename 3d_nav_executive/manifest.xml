@@ -1,25 +1,26 @@
 <package>
-  <description brief="3d_nav_executive - Launch files and configuration for 3d_navigation">
+	<description brief="3d_nav_executive - Launch files and configuration for 3d_navigation">
 
-     3d_nav_executive - Launch files and configuration for 3d_navigation
+		3d_nav_executive - Launch files and configuration for 3d_navigation on a PR2
 
-  </description>
-  <author>Armin Hornung</author>
-  <license>BSD</license>
-  <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/3d_nav_executive</url>
-  <depend package="rospy" />
-  <depend package="sbpl_lattice_planner_layer_3d" />
-  <depend package="move_base" />
-  <depend package="pr2_common_action_msgs" />
-  <depend package="pose_follower_3d" />
-  <depend package="octomap_server" />
-  <depend package="octomap_ros" />
-  <depend package="planning_environment" />
-  <depend package="robot_self_filter" />
-  <depend package="pr2_tuckarm" />
-  <depend package="pr2_teleop_general" />
-  
+	</description>
+	<author>Armin Hornung</author>
+	<license>BSD</license>
+	<review status="unreviewed" notes=""/>
+	<url>http://ros.org/wiki/3d_nav_executive</url>
+	<depend package="rospy" />
+	<!-- planning and execution of 3dnav-->
+	<depend package="planning_environment" />
+	<depend package="robot_self_filter" />
+	<depend package="move_base" />
+	<depend package="octomap_server" />
+	<depend package="octomap_ros" />
+	<depend package="pose_follower_3d" />
+	<depend package="sbpl_lattice_planner_layer_3d" />
+	<!-- robot specific components -->
+	<depend package="pr2_common_action_msgs" />
+	<depend package="pr2_tuckarm" />
+	<depend package="pr2_teleop_general" />
 </package>
 
 

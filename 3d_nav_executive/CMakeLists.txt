@@ -29,10 +29,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-
 rosbuild_add_executable(demo_3dnav src/demo_3dnav.cpp src/arm.cpp)
-rosbuild_add_executable(experiment_script1 src/experiment_script1.cpp src/arm.cpp)
-rosbuild_add_executable(experiment_script2 src/experiment_script2.cpp src/arm.cpp)
+rosbuild_add_executable(experiment_script src/experiment_script.cpp src/arm.cpp)
 rosbuild_add_executable(experiments src/experiments.cpp src/arm.cpp)
 rosbuild_add_executable(record_poses src/arm_motion_recorder.cpp)
-
