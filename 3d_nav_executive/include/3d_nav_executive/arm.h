@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 #include <ros/ros.h>
 #include <trajectory_msgs/JointTrajectory.h>
 #include <geometry_msgs/Pose.h>

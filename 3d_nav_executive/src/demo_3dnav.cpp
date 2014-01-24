@@ -440,4 +440,3 @@ int main(int argc, char** argv){
 
   demo.initPose();
 }
-

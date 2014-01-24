@@ -15,11 +15,12 @@ class Demo3DNav{
   public:
 
 Demo3DNav(){
+  ros::NodeHandle ph("~");
   larm = new Arm(std::string("left"));
   rarm = new Arm(std::string("right"));
   std::string poses_filename;
   std::string goal_filename;
-  ros::NodeHandle ph("~");
+
   ph.param<std::string>("arm_positions_filename", poses_filename, " ");
   ph.param<std::string>("goal_positions_filename", goal_filename, " ");
   goalPub = nh.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1);
