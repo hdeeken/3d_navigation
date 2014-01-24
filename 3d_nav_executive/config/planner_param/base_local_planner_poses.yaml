@@ -21,11 +21,7 @@ PoseFollower3D:
   sim_time: 1.0
   sim_granularity: 0.2
 
-
-
-
 # from pr2_navigation_config/ local planner. Should not be used by the TrajectoryPlanner in the PoseFollower...
-
 
 # not used atm:
 #  num_traj_steps: 50 # number of steps for trajectory rollouts

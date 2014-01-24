@@ -6,7 +6,6 @@ SBPLLatticePlannerLayer3D:
   initial_epsilon: 10.0
   forward_search: false
 
-
 # move_base params:
 
 footprint_padding: 0.01

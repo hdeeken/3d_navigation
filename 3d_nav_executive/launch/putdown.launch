@@ -1,7 +1,7 @@
+<?xml version="1.0"?>
 <launch>
-  <node  name="demo_3d_nav" pkg="3d_nav_executive" type="putdown" output="screen" > 
-    <param name="arm_positions_filename" value="$(find 3d_nav_executive)/config/arm_poses.txt" />
-    <param name="goal_positions_filename" value="$(find 3d_nav_executive)/config/goals.txt" />
-  </node>
-
+	<node  name="demo_3d_nav" pkg="3d_nav_executive" type="putdown" output="screen" >
+		<param name="arm_positions_filename" value="$(find 3d_nav_executive)/demo/arm_poses.txt" />
+		<param name="goal_positions_filename" value="$(find 3d_nav_executive)/demo/goals.txt" />
+	</node>
 </launch>
