@@ -7,7 +7,6 @@ import rospy
 import trajectory_msgs
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
-
 import actionlib
 from pr2_controllers_msgs.msg import PointHeadGoal,PointHeadAction
 from geometry_msgs.msg import PointStamped
@@ -28,7 +27,7 @@ if __name__ == '__main__':
 	tuck_arm_client.wait_for_result(rospy.Duration.from_sec(30.0))
 
 	#tuck_arm_client.send_goal_and_wait(goal, rospy.Duration(30.0), rospy.Duration(5.0))
-	
+
 	rospy.loginfo("Head scanning... ")
 	goalH = PointHeadGoal()
 	goalH.target.header.frame_id = "base_link";
@@ -39,36 +38,35 @@ if __name__ == '__main__':
 	goalH.pointing_axis.x = 1;
 	goalH.pointing_axis.y = 0;
 	goalH.pointing_axis.z = 0;
-	
+
 	point_head_client = actionlib.SimpleActionClient("/head_traj_controller/point_head_action", PointHeadAction)
 	point_head_client.wait_for_server()
 	point_head_client.send_goal(goalH)
 	point_head_client.wait_for_result(rospy.Duration.from_sec(5.0))
 	rospy.sleep(1.0)
-	
+
 	goalH.target.point.y = -1.0
 	point_head_client.send_goal(goalH)
 	point_head_client.wait_for_result(rospy.Duration.from_sec(5.0))
 	rospy.sleep(1.0)
-	
+
 	goalH.target.point.y = 1.0
 	point_head_client.send_goal(goalH)
 	point_head_client.wait_for_result(rospy.Duration.from_sec(5.0))
 	rospy.sleep(1.0)
-	
+
 	goalH.target.point.y = 3.0
 	point_head_client.send_goal(goalH)
 	point_head_client.wait_for_result(rospy.Duration.from_sec(5.0))
 	rospy.sleep(1.0)
-	
+
 	goalH.target.point.y = 0.0
 	point_head_client.send_goal(goalH)
 	point_head_client.wait_for_result(rospy.Duration.from_sec(5.0))
 	rospy.sleep(1.0)
-	
+
 	rospy.loginfo("Untucking arms...")
 	goal.tuck_left = False
 	goal.tuck_right = False
 	tuck_arm_client.send_goal(goal)
 	tuck_arm_client.wait_for_result(rospy.Duration.from_sec(30.0))
-
