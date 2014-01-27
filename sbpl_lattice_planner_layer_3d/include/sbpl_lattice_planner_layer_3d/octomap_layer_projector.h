@@ -45,7 +45,6 @@
 #include <pcl/filters/extract_indices.h>
 #include <pcl/filters/passthrough.h>
 
-
 #include <tf/transform_listener.h>
 #include <tf/message_filter.h>
 #include <message_filters/subscriber.h>
@@ -67,6 +66,7 @@ namespace sbpl_lattice_planner_layer_3d
  *  Currently this code is very specific to the needs of 3D navigation.
  *
  *  This is a port of OctomapServerCombined. */
+ 
 class OctomapLayerProjector
 {
 public:
@@ -151,5 +151,3 @@ protected:
 };
 
 } // end namespace sbpl_lattice_planner_layer_3d
-
-

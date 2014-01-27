@@ -18,43 +18,43 @@ namespace octomap {
 		void setParent(OctomapObject* parent) {parent = parent;}
 		const OcTree* getOcTree() const {return m_ocTree; }
 		void addChild(OctomapObject* child);
-	    inline void setOrigin(const octomap::pose6d& o) { origin = o; }
-	    inline octomap::pose6d&  getOrigin() { return origin; }
-	    inline octomap::pose6d  getOrigin() const { return origin; }
+		inline void setOrigin(const octomap::pose6d& o) { origin = o; }
+		inline octomap::pose6d&  getOrigin() { return origin; }
+		inline octomap::pose6d  getOrigin() const { return origin; }
 
-	    virtual unsigned numDOF() = 0;
-	    //virtual void setRange() = 0;
-	    virtual void init();
-	    void move(const std::vector<double>& param);
-	    void moveDiff(const std::vector<double>& param);
-	    virtual void setRange(unsigned dofIdx, double min, double max);
+		virtual unsigned numDOF() = 0;
+		//virtual void setRange() = 0;
+		virtual void init();
+		void move(const std::vector<double>& param);
+		void moveDiff(const std::vector<double>& param);
+		virtual void setRange(unsigned dofIdx, double min, double max);
 
-	    typedef std::vector<OctomapObject*>::iterator iterator;
-	    typedef std::vector<OctomapObject*>::const_iterator const_iterator;
-	    inline iterator begin () { return (children.begin ()); }
-	    inline iterator end ()   { return (children.end ()); }
-	    inline const_iterator begin () const { return children.begin (); }
-	    inline const_iterator end () const  { return children.end (); }
-	    inline size_t size () const { return children.size (); }
+		typedef std::vector<OctomapObject*>::iterator iterator;
+		typedef std::vector<OctomapObject*>::const_iterator const_iterator;
+		inline iterator begin () { return (children.begin ()); }
+		inline iterator end ()   { return (children.end ()); }
+		inline const_iterator begin () const { return children.begin (); }
+		inline const_iterator end () const  { return children.end (); }
+		inline size_t size () const { return children.size (); }
 
 
 
 	protected:
-	    struct MotionRange{
-	    	double min;
-	    	double range;
-	    	double current;
-	    };
-	    virtual void mapParams() = 0;
-	    inline double mapRange (unsigned i) const{
-	    	return motionRanges[i].min + motionRanges[i].range * motionRanges[i].current;
-	    }
+		struct MotionRange{
+			double min;
+			double range;
+			double current;
+		};
+		virtual void mapParams() = 0;
+		inline double mapRange (unsigned i) const{
+			return motionRanges[i].min + motionRanges[i].range * motionRanges[i].current;
+		}
 		OcTree* m_ocTree;
 		octomap::pose6d origin;
 		OctomapObject* parent;
-	    std::vector<OctomapObject*> children;
-	    /// motion range stored as min + total range
-	    std::vector<MotionRange> motionRanges;
+		std::vector<OctomapObject*> children;
+		/// motion range stored as min + total range
+		std::vector<MotionRange> motionRanges;
 
 	};
 
@@ -96,9 +96,6 @@ namespace octomap {
 		virtual void mapParams();
 	};
 
-
-
-
 } // namespace 
 
-#endif 
+#endif
